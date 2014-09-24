@@ -1,0 +1,6 @@
+${project.name} ${project.version}
+
+Build-Tag: ${BUILD_TAG}
+Build-Number: ${BUILD_NUMBER}
+Build-Id: ${BUILD_ID}
+Svn-Revision: ${SVN_REVISION}

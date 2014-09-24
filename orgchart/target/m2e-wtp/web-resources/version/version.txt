@@ -1,0 +1,6 @@
+orgchart Maven Webapp 0.0.1-SNAPSHOT
+
+Build-Tag: ${BUILD_TAG}
+Build-Number: ${BUILD_NUMBER}
+Build-Id: ${BUILD_ID}
+Svn-Revision: ${SVN_REVISION}

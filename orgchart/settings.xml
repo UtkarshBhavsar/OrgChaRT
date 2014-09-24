@@ -1,0 +1,58 @@
+ <settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+    <servers>
+        <server>
+            <id>xaton</id>
+            <username>deployment</username>
+            <password>x@t0n!te-xW@y</password>
+        </server>
+        <server>
+            <id>xaton-snapshot</id>
+            <username>deployment</username>
+            <password>x@t0n!te-xW@y</password>
+        </server>
+    </servers>
+
+    <activeProfiles>
+        <activeProfile>xaton-group</activeProfile>
+
+        <!--
+            This profile is automatically activated in pom.xml, but because of http://jira.codehaus.org/browse/MNG-3229
+            this doesn't work when using a settings file with "-s".
+            Activating the profile also here, is a workaround for this maven limitation.
+        -->
+        <activeProfile>development</activeProfile>
+    </activeProfiles>
+
+    <profiles>
+        <profile>
+
+            <id>xaton-group</id>
+
+            <repositories>
+                <repository>
+                    <id>xaton-group</id>
+                    <url>http://nexus.xaton.com/nexus/content/repositories/xaton-group</url>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>xaton-group</id>
+                    <url>http://nexus.xaton.com/nexus/content/repositories/xaton-group</url>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+
+            <properties>
+                <downloadSources>true</downloadSources>
+                <downloadJavadocs>true</downloadJavadocs>
+            </properties>
+        </profile>
+    </profiles>
+
+</settings>
